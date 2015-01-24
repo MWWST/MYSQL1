@@ -12,6 +12,10 @@
 	.error {
 		color: red;
 	}
+
+	.success {
+		color: green;
+	}
 	</style>
 </head>
 <body>
@@ -26,7 +30,10 @@
 		}
 		unset($_SESSION['errors']);
 	}
-	
+	if (isset($_SESSION['success_message'])){
+		echo "<p class='success'>{$_SESSION['success_message']}</p>";
+		unset($_SESSION['success_message']);
+	}
 
 ?>
 <h2>Register</h2>
